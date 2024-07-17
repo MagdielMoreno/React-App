@@ -68,7 +68,7 @@ const useStudents = () => {
 
     const updateStudent = async (student: Student) => {
         try {
-            const response = await axios.put<Student>(`${BASE_URL}/update/${student.id}`, student);
+            const response = await axios.put<Student>(`${BASE_URL}/students`, student);
             setStudents(prev => prev.map(s => s.id === student.id ? response.data : s));
             console.log("Student Updated");
         } catch (error) {
@@ -78,7 +78,7 @@ const useStudents = () => {
 
     const deleteStudents = async (ids: number[]) => {
         try {
-            await Promise.all(ids.map(id => axios.delete(`${BASE_URL}/delete/${id}`)));
+            await Promise.all(ids.map(id => axios.delete(`${BASE_URL}/students/${id}`)));
             setStudents(prev => prev.filter(student => !ids.includes(student.id)));
             console.log("Student(s) Deleted");
         } catch (error) {
