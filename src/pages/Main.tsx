@@ -58,7 +58,7 @@ const useStudents = () => {
 
     const addStudent = async (student: Student) => {
         try {
-            const response = await axios.post<Student>(`${BASE_URL}/add`, student);
+            const response = await axios.post<Student>(`${BASE_URL}/students`, student);
             setStudents(prev => [...prev, response.data]);
             console.log("Student Added");
         } catch (error) {
