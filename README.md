@@ -1,1 +1,1 @@
-# React-Vite-Tailwind-NexUI-App
+# React-Vite-Tailwind-NexUI

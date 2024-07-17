@@ -32,7 +32,7 @@ interface Student {
     phone: string;
 }
 
-const BASE_URL = 'http://localhost:8080/students';
+const BASE_URL = 'https://api-springboot-production.up.railway.app';
 const columns = [
     { key: "name", label: "NAME", sortable: true },
     { key: "email", label: "EMAIL", sortable: true },
@@ -46,7 +46,7 @@ const useStudents = () => {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get<Student[]>(`${BASE_URL}/all`);
+                const response = await axios.get<Student[]>(`${BASE_URL}/students`);
                 setStudents(response.data);
             } catch (error) {
                 console.error("Error fetching students: ", error);
